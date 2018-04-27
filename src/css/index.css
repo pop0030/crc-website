@@ -1,0 +1,28 @@
+html {
+  font-size: 100%;
+}
+.flex {
+  display: flex;
+  z-index: 9999;
+}
+.box {
+  width: 100px;
+}
+.box {
+  width: calc(100% - 20px);
+  height: 100px;
+  line-height: 100px;
+}
+.box {
+  text-align: center;
+  font-size: 4rem;
+  background-color: #f00;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}

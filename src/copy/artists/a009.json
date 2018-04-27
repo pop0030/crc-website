@@ -1,0 +1,16 @@
+{
+    "id": "a009",
+    "name": "黃俊維",
+    "cover": "asset/img/artist-images/黃俊維.jpg",
+    "title" : "十大經典漫畫家",
+    "intro": "從漫畫家助手做起，一路做到上檔連載漫畫家。參加過劇情漫畫獎。代表作：『厄運偵探』",
+    "event": ["e001"],
+    "port": [
+        {
+            "portName":"彩稿封面",
+            "img": "asset/img/port-images/a009-1.jpg",
+            "portAuthor":"黃俊維",
+            "portAttr":"彩稿"
+        }
+    ]
+}

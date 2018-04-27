@@ -1,0 +1,47 @@
+- var devMode = self.htmlWebpackPlugin.options.data.DEV_MODE
+doctype
+html
+    head
+        meta(charset='UTF-8')
+        title 藝文振興鼎談 | 官方網站
+        link(rel="shortcut icon" href="favicon.png")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no")
+        meta(http-equiv="x-ua-compatible" content="ie=edge")
+        meta(name="description" content="")
+        meta(property="og:title" content="")
+        meta(property="og:description" content="")
+        meta(property="og:image" content="")
+    body
+        #app
+        
+        //-if(devMode)
+            script(src='//cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js')
+        //-else
+            script(src='//cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js')
+        
+        //- script(src='//cdnjs.cloudflare.com/ajax/libs/vuex/2.1.2/vuex.min.js')
+        //- script(src='//cdnjs.cloudflare.com/ajax/libs/vue-router/2.2.0/vue-router.min.js')
+        //- script(src='//cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js')
+        //- IE11 
+        //- script(src='//cdnjs.cloudflare.com/ajax/libs/es6-promise/4.0.5/es6-promise.auto.min.js')
+
+        //- bootstrap4
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js", integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=", crossorigin="anonymous")
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')
+        //- bootstrap4
+
+        //-Firebase
+        script(src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js")
+        script.
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAZe66YvQcuYUBWCUrDVX6XgYAe30p5OCM",
+                authDomain: "myfirstproject-81077.firebaseapp.com",
+                databaseURL: "https://myfirstproject-81077.firebaseio.com",
+                projectId: "myfirstproject-81077",
+                storageBucket: "myfirstproject-81077.appspot.com",
+                messagingSenderId: "1068301989538"
+            };
+            firebase.initializeApp(config);

@@ -1,0 +1,16 @@
+{
+    "id": "a006",
+    "name": "俞家燕（2D馬賽克）",
+    "cover": "asset/img/artist-images/俞家燕.jpg",
+    "title" : "十大經典漫畫家",
+    "intro": "著名台灣漫畫家。原爲插畫作者，2006年轉型成爲漫畫家，成爲新一代少女漫畫界最受矚目的閃亮新星。曾用“燕子格格”及“2D馬賽克”爲筆名。",
+    "event": ["e001"],
+    "port": [
+        {
+            "portName":"暖暖封面",
+            "img": "asset/img/port-images/a006-1.jpg",
+            "portAuthor":"俞家燕（2D馬賽克）",
+            "portAttr":""
+        }
+    ]
+}

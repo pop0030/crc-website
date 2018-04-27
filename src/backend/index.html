@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>藝文振興鼎談｜後台系統</title>
+</head>
+<body>
+	<div id="login" style="display:none">
+		<h2>登入</h2>
+		<lable for="accountL">帳號</lable>
+		<input id="accountL" type="text">
+		<br/>
+		<lable for="pwdL">密碼</lable>
+		<input id="pwdL" type="password">
+		<br/>
+		<button type="submit" id="loginBtn">登入</button>
+	</div>
+	<div id="logout" style="display:none">
+		<button type="submit" id="logoutBtn">登出</button>
+	</div>
+	<div id="eventPost" class="authDiv" style="display:none">
+		<h2>新增預告</h2>
+		<p>
+			<lable for="eTitle">標題</lable>
+			<input id="eTitle" type="text">
+		</p>
+		<p>
+			<lable for="eStrDateTime">開始時間</lable>
+			<input id="eStrDateTime" type="datetime-local">
+		</p>
+		<p>
+			<lable for="eEndDateTime">結束時間</lable>
+			<input id="eEndDateTime" type="datetime-local">
+		</p>
+		<p>
+			<lable for="eIntro">簡介</lable><br/>
+			<textarea id="eIntro" type="text"></textarea>
+		</p>
+		<p>
+			<lable for="eHost">主講人</lable><br/>
+			<input id="eHost" type="text"></textarea>
+		</p>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyAZe66YvQcuYUBWCUrDVX6XgYAe30p5OCM",
+		authDomain: "myfirstproject-81077.firebaseapp.com",
+		databaseURL: "https://myfirstproject-81077.firebaseio.com",
+		projectId: "myfirstproject-81077",
+		storageBucket: "myfirstproject-81077.appspot.com",
+		messagingSenderId: "1068301989538"
+	};
+	firebase.initializeApp(config);
+
+	var database = firebase.database();
+
+	// 登入
+	$('#loginBtn').click(function (e) {
+		firebase.auth().signInWithEmailAndPassword(accountL.value, pwdL.value).catch(function(error) {
+			// Handle Errors here.
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			console.log(errorMessage);
+		})
+	});
+
+	//登出
+	$('#logoutBtn').click(function (e) {
+		firebase.auth().signOut().then(function() {
+			console.log("User sign out!");
+		}, function(error) {
+			console.log("User sign out error!");
+		})
+	});
+
+	//當使用者改變觸發
+	var loginUser;
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			loginUser = user;
+			console.log("User is logined", user)
+			$('#logout').show();
+			$('#login').hide();
+			$('.authDiv').show();
+		} else {
+			loginUser = null;
+			console.log("User is not logined yet.");
+			$('#login').show();
+			$('#logout').hide();
+			$('.authDiv').hide();
+		}
+	});
+
+	var stc = {
+		"id": "001",
+		"title": "台灣文創十五年(文創產業化)",
+		"date": {
+			"from": "2017-09-03T13:30:00",
+			"to": "2017-09-03T15:00:00"
+		},
+		"intro": "自2002年《挑戰2008國家發展六年計畫》提出「文化創意產業」以來，至2017年將滿15年。從概念、旗艦計畫、五大園區到《文創法》立法、推動創新創業，政策逐漸落實中。2016年政黨輪替之後，也正是檢討與前瞻的時機。\n\n過去15年文化創意產業政策的推動，有哪些具體的成效？\n過去15年的政策推動過程，方向是否正確? 有哪些面向被忽視?未來應該可如何調整?\n環視當前及未來國際產業局勢發展，對於台灣文化創意產業的產業前景評估，以及政策和產業方向的建議?",
+		"cover": "asset/img/event-images/001/cover.png",
+		"host": [
+			"梁文菁/國立清華大學外國語文學系副教授，臺灣莎士比亞學會秘書長",
+			"羅珮嘉/台灣國際女性影展策展人"
+		],
+		"hostIntro": [
+			"倫敦大學皇家哈樂威學院劇場研究博士，臺北藝術大學劇場導演藝術碩士，自從大學時加入臺大話劇社之後，便著迷於當代戲劇的世界，並持續觀察及參與臺灣劇場工作。目前任職於清大外國語文學系，課堂上主要教授英國當代劇場、莎士比亞等戲劇研究相關課程。",
+			"羅珮嘉，美國加州州立大學廣電系學士、英國倫敦大學電影史與視覺藝術碩士。歷任公共電視台節目執行、社區大學電影學程講師、台灣國際女性影展策展人等，現擔任台灣女性影像學會祕書長。\n熟稔電影史與影像理論，崇尚女性主義與文學，對於能夠展演性別意識的藝術媒介與架構，有著無比的熱情與執著。已翻譯、著述諸多相關篇章，字裡行間往往知性與感性兼具。"
+		],
+		"hostWorks": [
+			{ 
+				"name" : "作品名稱",
+				"author" : "作者名稱",
+				"img": "asset/img/event-images/001/w001.png"
+			}
+		],
+		"location": "誠品書店敦南店B2視聽室"
+	}
+
+</script>
+
+</html>
