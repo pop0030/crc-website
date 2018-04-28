@@ -96,7 +96,10 @@ config.module = {
         },
         {
             test: /\.css$/,
-            loader: ['style-loader', 'css-loader'],
+            loader: [
+                'style-loader',
+                'css-loader'
+            ]
         },
         {
             test: /\.(png|jpg|gif|svg|ico)$/,
@@ -124,7 +127,7 @@ config.module = {
             //mimetype=application/font-woff"
         },
         {
-            test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            test: /\.(ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             exclude: path.resolve('src/img'),
             loader: 'file-loader',
         },

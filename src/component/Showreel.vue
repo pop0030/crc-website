@@ -15,7 +15,7 @@ div.showreelDiv.container-fluid
 
 <script>
 import 'owl.carousel'
-import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.carousel.min.css'
 
 export default {
     data() {
