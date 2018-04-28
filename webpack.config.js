@@ -52,7 +52,7 @@ const config = {
             path.resolve('src'),
             path.resolve('node_modules'),
         ],
-        extensions: [".js", ".vue", ".styl"]
+        extensions: ['.js', '.vue', '.styl'],
     },
     devServer: {
         hot: true,
@@ -90,13 +90,13 @@ config.module = {
             loader: 'babel-loader',
             include: [
                 path.resolve('src/js'),
-                path.resolve('src/lib')
+                path.resolve('src/lib'),
             ],
-            exclude: /node_modules/
+            exclude: /node_modules/,
         },
         {
             test: /\.css$/,
-            loader: ['style-loader', 'css-loader']
+            loader: ['style-loader', 'css-loader'],
         },
         {
             test: /\.(png|jpg|gif|svg|ico)$/,
@@ -117,17 +117,17 @@ config.module = {
         },
         {
             test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
-                limit: 10000
-            }
-            //mimetype=application/font-woff" 
+                limit: 10000,
+            },
+            //mimetype=application/font-woff"
         },
         {
             test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             exclude: path.resolve('src/img'),
-            loader: "file-loader"
-        }
+            loader: 'file-loader',
+        },
     ],
 };
 
@@ -135,22 +135,22 @@ config.module = {
 config.plugins = [
     // copy src/copy 下所有檔案，放到 dist 下
     copyWebpackPlugin([{
-            from: 'copy',
-            to: './'
-        },
-        {
-            from: 'img/',
-            to: './asset/img/'
-        },
-        {
-            from: 'backend/',
-            to: './backend/'
-        }
+        from: 'copy',
+        to: './',
+    },
+    {
+        from: 'img/',
+        to: './asset/img/',
+    },
+    {
+        from: 'backend/',
+        to: './backend/',
+    },
     ]),
-    // 產生 html , 並注入script tag app.js?[hash] 
+    // 產生 html , 並注入script tag app.js?[hash]
     new HtmlWebpackPlugin({
         template: 'html/index.template.pug',
-        data: { // 傳變數給 .pug 
+        data: { // 傳變數給 .pug
             DEV_MODE,
         },
     }),
