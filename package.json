@@ -12,8 +12,8 @@
     "vue"
   ],
   "scripts": {
-    "d": "gulp d",
-    "p": "gulp p"
+    "dev": "gulp d",
+    "build": "gulp p"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
