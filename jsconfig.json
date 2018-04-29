@@ -7,9 +7,9 @@
 		"allowSyntheticDefaultImports": true
 	},
 	"exclude": [
-		"node_modules",		
+		"node_modules",
 		"tmp",
-		"dist"
+		"doc"
 	],
 	"include": [
         "src/js/**/*"

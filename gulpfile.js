@@ -33,7 +33,7 @@ function logProduction() {
 
 gulp.task('rimraf', (cb) => {
     console.log('rimraf');
-    rimraf('./dist', cb);
+    rimraf('./doc', cb);
 });
 
 
