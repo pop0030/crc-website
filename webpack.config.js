@@ -35,7 +35,7 @@ const config = {
     output: {
         filename: toFilename('asset/js/[name]'),
         chunkFilename: toFilename('asset/js/[name]'),
-        path: path.resolve(__dirname, './doc'),
+        path: path.resolve(__dirname, './docs'),
         publicPath: '',
     },
     // 'cheap-module-eval-source-map'; // 這會抓到 stylus, scss mixin 裡的路徑
