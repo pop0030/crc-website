@@ -1,8 +1,6 @@
 .sass-cache
 node_modules
 bower_components
-_doc
-doc
 psd
 *.zip
 *.psd
