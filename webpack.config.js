@@ -127,7 +127,7 @@ config.module = {
             //mimetype=application/font-woff"
         },
         {
-            test: /\.(ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+            test: /\.(ttf|eot|svg|png|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             exclude: path.resolve('src/img'),
             loader: 'file-loader',
         },
@@ -136,19 +136,11 @@ config.module = {
 
 
 config.plugins = [
-    // copy src/copy 下所有檔案，放到 dist 下
-    copyWebpackPlugin([{
-        from: 'copy',
-        to: './',
-    },
-    {
-        from: 'img/',
-        to: './asset/img/',
-    },
-    {
-        from: 'backend/',
-        to: './backend/',
-    },
+    copyWebpackPlugin([
+        {
+            from: 'api',
+            to: './',
+        },
     ]),
     // 產生 html , 並注入script tag app.js?[hash]
     new HtmlWebpackPlugin({

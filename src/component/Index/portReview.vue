@@ -30,7 +30,8 @@ export default {
     },
     methods : {
         bgPic : function (imgUrl) {
-            return {backgroundImage: 'url('+'./asset/img/port-images/'+imgUrl+')'}
+            const img = require(`../../img/port-images/${ imgUrl }`);
+            return { backgroundImage: `url(${img})` }
         },
         bgColor : function (hsa) {
             return {backgroundColor: hsa}

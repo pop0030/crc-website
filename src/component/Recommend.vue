@@ -46,13 +46,14 @@
 </template>
 
 <script>
-import _ from 'fn'
-import axios from 'axios'
-import Loading from 'Loading'
+import _ from 'fn';
+import axios from 'axios';
+import Loading from 'Loading';
+import cover from '../img/lib-images/toa-heftiba-250946.jpg';
 export default {
     data() {
         return {
-            cover: "./asset/img/lib-images/toa-heftiba-250946.jpg",
+            cover,
             artObj: '',
             artist: '',
             issue : '',

@@ -21,39 +21,40 @@ div.reeReview.container-fluid
 </template>
 
 <script>
-import _ from 'fn'
-    export default {
-        data () {
-            return {
-                reeReviewBgImg: './asset/img/lib-images/DAV_2383.jpg',
-                reeList: [
-                    {
-                        title: '第三屆海峽兩岸君子之風 梅蘭竹菊風雅',
-                        intro: '第三屆海峽兩岸君子之風• 梅蘭竹菊藝術雅集在此拉開帷幕。全國政協常委、台盟中央副主席、清華大學教授吳國楨，全國政協常委、中國書法家協會主席蘇士澍，全國政協書畫室副主任、中國書法家協會理事趙學敏，全國政協常委、著名話劇演員李羚，全國政協委員、著名琵琶演奏家吳玉霞，全國政協委員、著名評彈藝術家盛小雲，北京京劇院青年團團長、著名京劇表演藝術家遲小秋，著名畫家邢少臣、王玉、陳秀，詩人潘衍習等與台灣藝術家齊聚一堂，共賀此屆兩岸交流盛會。',
-                        ytUrl: 'https://www.youtube.com/embed/jd9UN9ZG61A?wmode=transparent',
-                    },{
-                        title: '華夏書畫創作大賽 ',
-                        intro: '第三屆海峽兩岸君子之風• 梅蘭竹菊藝術雅集在此拉開帷幕。全國政協常委、台盟中央副主席、清華大學教授吳國楨，全國政協常委、中國書法家協會主席蘇士澍，全國政協書畫室副主任、中國書法家協會理事趙學敏，全國政協常委、著名話劇演員李羚，全國政協委員、著名琵琶演奏家吳玉霞，全國政協委員、著名評彈藝術家盛小雲，北京京劇院青年團團長、著名京劇表演藝術家遲小秋，著名畫家邢少臣、王玉、陳秀，詩人潘衍習等與台灣藝術家齊聚一堂，共賀此屆兩岸交流盛會。',
-                        ytUrl: 'https://www.youtube.com/embed/CV0V38_JO7c?list=PLk0TgSEV-XPWxxzx5P3_svuI62lKQZjP6?wmode=transparent',
-                    },{
-                        title: '2017書畫家新春聯歡會',
-                        intro: '第三屆海峽兩岸君子之風• 梅蘭竹菊藝術雅集在此拉開帷幕。全國政協常委、台盟中央副主席、清華大學教授吳國楨，全國政協常委、中國書法家協會主席蘇士澍，全國政協書畫室副主任、中國書法家協會理事趙學敏，全國政協常委、著名話劇演員李羚，全國政協委員、著名琵琶演奏家吳玉霞，全國政協委員、著名評彈藝術家盛小雲，北京京劇院青年團團長、著名京劇表演藝術家遲小秋，著名畫家邢少臣、王玉、陳秀，詩人潘衍習等與台灣藝術家齊聚一堂，共賀此屆兩岸交流盛會。',
-                        ytUrl: 'https://www.youtube.com/embed/QieGDtJSZew?list=PLk0TgSEV-XPXo5ZcP9kLxD2MzEiHViXnv?wmode=transparent',
-                    }
-                ]
-            }
-        },
-        methods: {
-            short: _.short
-        },
-        computed: {
-            reeReviewBg: function () {
-                let img1 = 'url(' + this.reeReviewBgImg + ')'
-                let img2 = 'linear-gradient(0, rgba(0,0,0,0.8), rgba(0,0,0,0.5))'
-                return { backgroundImage: img2 + ','+ img1}
-            }
+import _ from 'fn';
+import reeReviewBgImg from '../../img/lib-images/DAV_2383.jpg';
+export default {
+    data () {
+        return {
+            reeReviewBgImg,
+            reeList: [
+                {
+                    title: '第三屆海峽兩岸君子之風 梅蘭竹菊風雅',
+                    intro: '第三屆海峽兩岸君子之風• 梅蘭竹菊藝術雅集在此拉開帷幕。全國政協常委、台盟中央副主席、清華大學教授吳國楨，全國政協常委、中國書法家協會主席蘇士澍，全國政協書畫室副主任、中國書法家協會理事趙學敏，全國政協常委、著名話劇演員李羚，全國政協委員、著名琵琶演奏家吳玉霞，全國政協委員、著名評彈藝術家盛小雲，北京京劇院青年團團長、著名京劇表演藝術家遲小秋，著名畫家邢少臣、王玉、陳秀，詩人潘衍習等與台灣藝術家齊聚一堂，共賀此屆兩岸交流盛會。',
+                    ytUrl: 'https://www.youtube.com/embed/jd9UN9ZG61A?wmode=transparent',
+                },{
+                    title: '華夏書畫創作大賽 ',
+                    intro: '第三屆海峽兩岸君子之風• 梅蘭竹菊藝術雅集在此拉開帷幕。全國政協常委、台盟中央副主席、清華大學教授吳國楨，全國政協常委、中國書法家協會主席蘇士澍，全國政協書畫室副主任、中國書法家協會理事趙學敏，全國政協常委、著名話劇演員李羚，全國政協委員、著名琵琶演奏家吳玉霞，全國政協委員、著名評彈藝術家盛小雲，北京京劇院青年團團長、著名京劇表演藝術家遲小秋，著名畫家邢少臣、王玉、陳秀，詩人潘衍習等與台灣藝術家齊聚一堂，共賀此屆兩岸交流盛會。',
+                    ytUrl: 'https://www.youtube.com/embed/CV0V38_JO7c?list=PLk0TgSEV-XPWxxzx5P3_svuI62lKQZjP6?wmode=transparent',
+                },{
+                    title: '2017書畫家新春聯歡會',
+                    intro: '第三屆海峽兩岸君子之風• 梅蘭竹菊藝術雅集在此拉開帷幕。全國政協常委、台盟中央副主席、清華大學教授吳國楨，全國政協常委、中國書法家協會主席蘇士澍，全國政協書畫室副主任、中國書法家協會理事趙學敏，全國政協常委、著名話劇演員李羚，全國政協委員、著名琵琶演奏家吳玉霞，全國政協委員、著名評彈藝術家盛小雲，北京京劇院青年團團長、著名京劇表演藝術家遲小秋，著名畫家邢少臣、王玉、陳秀，詩人潘衍習等與台灣藝術家齊聚一堂，共賀此屆兩岸交流盛會。',
+                    ytUrl: 'https://www.youtube.com/embed/QieGDtJSZew?list=PLk0TgSEV-XPXo5ZcP9kLxD2MzEiHViXnv?wmode=transparent',
+                }
+            ]
+        }
+    },
+    methods: {
+        short: _.short
+    },
+    computed: {
+        reeReviewBg: function () {
+            let img1 = 'url(' + this.reeReviewBgImg + ')'
+            let img2 = 'linear-gradient(0, rgba(0,0,0,0.8), rgba(0,0,0,0.5))'
+            return { backgroundImage: img2 + ','+ img1}
         }
     }
+}
 </script>
 
 <style lang="stylus">

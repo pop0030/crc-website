@@ -30,30 +30,6 @@ export default {
                     imgStyle:this.showImgStyle('main-logo-lg.jpg','center','50%') 
                 },
                 { 
-                    title: '2017台灣書畫家新春聯歡會', 
-                    ctx: '- 攝於台北大三元酒樓', 
-                    link: '#' ,
-                    showCard: true,
-                    type: 'figure',
-                    imgStyle:this.showImgStyle('DAV_2686.jpg',0,'50%') 
-                },
-                { 
-                    title: '台灣十大經典漫畫家聯合出版簽約', 
-                    ctx: '- 攝於藝文振興鼎談內湖總部', 
-                    link: '#' ,
-                    showCard: true,
-                    type: 'figure',
-                    imgStyle:this.showImgStyle('106-DAV_1164.JPG',0,'25%') 
-                },
-                { 
-                    title: '第三屆海峽兩岸藝術雅集開幕', 
-                    ctx: '- 攝於台北圓山飯店', 
-                    link: '#' ,
-                    showCard: true,
-                    type: 'figure',
-                    imgStyle:this.showImgStyle('150-DAV_6643.JPG',0,'50%') 
-                },
-                { 
                     title: '引領文創產業新時代', 
                     ctx: '《藝文振興鼎談》深知藝文創作者對於開拓市場之迫切需求，因此，《藝文振興鼎談》將運用數位科技作為載具，為台灣藝文界串起整合產銷系統的價值鏈，透過介接國際市場，為台灣打造最完整的藝文雲端生態系。 ', 
                     link: '#' ,
@@ -74,9 +50,10 @@ export default {
     },
     methods: {
         showImgStyle: function (imgUrl, x=0, y=0) {
+            const img = require(`../img/showreel/${imgUrl}`);
             return {
-                'background-position': x+' '+y,
-                'background-image': 'url('+'./asset/img/showreel/'+imgUrl+')'
+                'background-position': `${x} ${y}`,
+                'background-image': `url(${img})`
             }
         }
     },

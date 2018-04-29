@@ -12,11 +12,12 @@ header
 
 <script>
     import { mapGetters, mapActions } from 'vuex';
-    import Navigation from './Navigation'
+    import Navigation from './Navigation';
+    import mainLogo from '../img/main_logo.svg';
     export default {
         data() {
             return {
-                mainLogo : './asset/img/main_logo.svg'
+                mainLogo
             }
         },
         methods: {

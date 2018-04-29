@@ -16,35 +16,11 @@ div.eventReview.container-fluid
                 p.eventCtx {{short(i.intro, 150)}}
             p.eventLink
                 router-link(:to="'/event/'+i.id") READ MORE 
-    //-
-        div.col-lg-3.col-md-6.event-item(v-for="(i, n) in eventReview")
-            div
-                p.eventNum 01
-                p.eventTitle 台灣文創十五年（文創產業化）
-                p.eventField 文創領域
-                p.eventCtx 自2002年《挑戰2008國家發展六年計畫》提出「文化創意產業」以來，至2017年將滿15年。從概念、旗艦計畫、五大園區到《文創法》立法、推動創新創業，政策逐漸落實中。2016年政黨輪替之後，也正是檢討與前瞻的時機。
-            p.eventLink
-                a(href="#") READ MORE 
-        div.col-lg-3.col-md-6.event-item
-            div
-                p.eventNum 02
-                p.eventTitle 台灣舞台戲劇的商業化潛力
-                p.eventField 舞台劇領域
-                p.eventCtx 台灣發展商業劇場的條件是什麼？ 放眼華人社會愈來愈大的戲劇市場，台灣的舞台劇製作，可以投資嗎？ 國外常見的觀光劇或定目劇，台灣有機會發展成功的條件是什麼？
-            p.eventLink
-                a(href="#") READ MORE 
-        div.col-lg-3.col-md-6.event-item
-            div
-                p.eventNum 03
-                p.eventTitle 面對國際級劇場到位後的挑戰
-                p.eventField 表演藝術領域
-                p.eventCtx 表演藝術的內容創新製作如何銜接國際水準？國際製作、策劃與經營人才在哪裡？如何培養？如何提升觀眾層次（劇場與市民）？如何以國際級劇場建築驅動城市的發展？
-            p.eventLink
-                a(href="#") READ MORE 
 </template>
   
 <script>
-import _ from 'fn'
+import _ from 'fn';
+import coverImg from '../../img/lib-images/mariya-georgieva-162502.jpg';
 export default {
     data () {
         return {
@@ -53,7 +29,7 @@ export default {
             ready: false,
             bgImgs: [
                 'linear-gradient(180deg, rgba(12, 134, 106, 0.8), rgba(12, 134, 106, 0.8))',
-                'url("./asset/img/lib-images/mariya-georgieva-162502.jpg")'
+                `url(${ coverImg })`
             ]
         }
     },

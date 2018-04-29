@@ -19,6 +19,7 @@ div.newsReview.container-fluid
 </template>
 
 <script>
+import coverImg from '../../img/reporter_unsplash.jpg';
 export default {
     data () {
         return {
@@ -33,8 +34,8 @@ export default {
     },
     computed: {
         headerBgStyle : function () {
-            let p1 = 'url(./asset/img/reporter_unsplash.jpg)'
-            let p2 = 'linear-gradient(0, rgba(0,0,0,.5),rgba(0,0,0,.5))'
+            let p1 = `url(${ coverImg })`;
+            let p2 = 'linear-gradient(0, rgba(0,0,0,.5),rgba(0,0,0,.5))';
             return { backgroundImage: p2 + ',' + p1 }
         }
     }

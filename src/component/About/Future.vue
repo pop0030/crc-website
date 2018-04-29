@@ -19,21 +19,24 @@
         h3.stage-title 未來發展
         div.stage-content.future.col-md-12
             section.phaseOne
-                div.bg(:style={"backgroundImage":"url('./asset/img/future_bg.jpg')"})
+                div.bg(:style="{ backgroundImage: `url(${phaseOneImg})` }")
                 div.ctx
                     h4 從大師到菁英、從菁英到才俊
                     p(v-html="nbr(phaseOne)")
             section.phaseTwo
                 h4 台灣走向亞洲，從亞洲走向全球
-                p: img(:src="'./asset/img/lib-images/small_image_2.jpg'")
+                p: img(:src="phaseTwoImg")
                 p(v-html="nbr(phaseTwo)")
 </template>
 
 <script>
-
+import phaseOneImg from '../../img/future_bg.jpg';
+import phaseTwoImg from '../../img/lib-images/small_image_2.jpg';
 export default {
     data () {
         return {
+            phaseOneImg,
+            phaseTwoImg,
             goals : [
                 { 
                     title:'聯合向政府取得輔導與協助', 

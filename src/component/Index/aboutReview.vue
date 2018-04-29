@@ -13,18 +13,19 @@ div.aboutReview.container-fluid
 </template>
 <script>
 import _ from 'fn'
+import reviewImg from '../../img/lib-images/nik-macmillan-151041.jpg';
 export default {
     data () {
         return {
             aboutBg: 0,
             libImages: [
-                'nik-macmillan-151041.jpg',
+                reviewImg,
             ]
         }
     },
     computed: {
         aboutReviewBg: function () {
-            return { backgroundImage: 'url(./asset/img/lib-images/'+this.libImages[this.aboutBg]+')'}
+            return { backgroundImage: `url(${ this.libImages[this.aboutBg] })` }
         },
     },
     methods: {

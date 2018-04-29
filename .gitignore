@@ -4,9 +4,10 @@ bower_components
 _doc
 doc
 dist
-src/img
+psd
 *.zip
 *.psd
+*.ai
 *.doc
 *.docx
 *.ppt
